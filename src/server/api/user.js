@@ -62,8 +62,7 @@ export function buildUserOrganizationQuery(
   queryParam,
   organizationId,
   role,
-  campaignId,
-  offset
+  campaignId
 ) {
   const roleFilter = role ? { role } : {};
 
