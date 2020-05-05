@@ -18,7 +18,8 @@ const User = thinky.createModel(
       created_at: timestamp(),
       assigned_cell: type.string(),
       is_superadmin: type.boolean(),
-      terms: type.boolean().default(false)
+      terms: type.boolean().default(false),
+      is_deleted: type.boolean().default(false)
     })
     .allowExtra(false),
   { noAutoCreation: true }
