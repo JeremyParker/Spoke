@@ -70,6 +70,7 @@ export function buildUserOrganizationQuery(
     .from("user_organization")
     .innerJoin("user", "user_organization.user_id", "user.id")
     .where(roleFilter)
+    .andWhere({ is_deleted: false })
     .whereRaw('"user_organization"."organization_id" = ?', organizationId)
     .distinct();
 
@@ -181,7 +182,8 @@ export const resolvers = {
         "email",
         "cell",
         "assignedCell",
-        "terms"
+        "terms",
+        "isDeleted"
       ],
       User
     ),
